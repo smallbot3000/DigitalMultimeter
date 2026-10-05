@@ -1,0 +1,51 @@
+\documentclass{article}
+\input{input_this}
+\doctitle{ECT 437 and ECT 438 Project Scope}
+\shorttitle{Scope}
+
+\begin{document}
+    \maketitle
+    \section{Overview}\label{sec:overview}
+    This project will create a micro-controller based digital multimeter system that can be used to measure voltage, current, resistance, capacitance, and inductance values of a given circuit via probes and display the resulting values on an integrated LCD screen.
+
+    This project will be completed over two semester courses (ECT 437 and ECT 438) by Jacob Goin, Micheal Keneipp, and Jacob Small, with Jacob Small being the project manager.
+
+    \section{Deliverables}
+    This project will contain three types of deliverables: internal, external, and tangible deliverables.
+    Internal project deliverables will be initial design, Schedule, Gantt chart, Work Breakdown Structure, and proposed budget.
+    The External project deliverables will be the initial Project documents, documentation of multimeter internals research, the Final Design, Final Product, and a Final document that describes the work done and processes taken to achieve this work.
+
+    In terms of tangible deliverables, this project will have a number of items that will be created while the system is developed and refined.
+    Firstly, the group will reverse engineer a number of store-bought multi-meters and study the logic that goes into them via our sample size as well as literature.
+    After an understanding of the needed circuitry is established, we can then start making our own schematics that use the components that we can obtain.
+    Third, the schematics will be translated onto breadboards module by module (explained in~\autoref{sec:feat_func}), where they can be tested (via lab multi-meters), refined, and revised if needed.
+    After the system works within tolerances on breadboards, we can then make a PCB, where after making a plastic enclosure, we have our final product.
+
+    \section{Features and Functions}\label{sec:feat_func}
+    As described in~\autoref{sec:overview}, this project will contain a number of modules with capabilities to measure voltage and current values as well as resistance, capacitance, and inductance.
+    Given these items, a few safety modules are also needed to be made.
+    If the voltage or current applied to the system is outside of the micro-controller's acceptable voltage range, it will need to be stepped up or down to protect the system from an over-voltage condition.
+    If it cannot be stepped down, the voltage will need to be rejected by the system to ensure its protection.
+
+    To display the measurement output, type of measurement, and other ease of use items, an LCD screen will also be included into the system, and will needed to be controlled by the micro-controller in a way that allows it to be easily interpreted and utilized by an outside individual, while also not taking up a substantial amount of the micro-controller's memory and affecting the space allowance of other more important software processes.
+    However, given the LCD's comparative unimportance to other sub-systems, the laptop connected to the micro-controller may be used for these tasks.
+
+    \section{Acceptance Criteria}
+    Given that this project is a measurement device, the system's acceptance criteria is quite easy to define.
+    The value produced by each module when created in both breadboard and PCB form factor should be able to replicate the value produced by a lab multimeter within a value ($\pm V$) or percentage-based ($\pm \%$) tolerance, to be determined during the research process.
+    \section{Limitation and Restrictions}
+    The main limitations and restrictions places upon this project revolve around cost and time.
+    As said before, this project does not consist of any majorly complex components or processes, however, there is always a possibility of delay in shipping, manufacture of a needed assembly, or that a group member is unable to complete their tasks on time due to illness or other issues.
+
+    \section{Uncertainties}
+    The uncertainties of this project are twofold: Timing of both the member's schedules and the shipping of the needed components as well as the ability to make the overall project deadline of the end of  the 2027 Spring academic semester.
+
+    Regarding the uncertainty involving timing, while schedules hypothetically should remain constant or easily predictable, most if not all of the individuals invoked on the project have academic, occupational, or organization-based obligations that may be spontaneous or otherwise unpredictable.
+    In addition, issues in shipping of needed materials may have an unforeseen impact on the project's goals, but given the relative simplicity of the project, shipping issues are most likely to be overshadowed by scheduling issues than vice versa.
+
+    It can be argued that the possibility of not meeting the overall deadline for a project is an issue that effects almost every project, and this one is no different.
+    However, as mentioned before it seems that this project is easy in concept, and will just need to be executed in a smart manner, making the possibility of missing the main deadline quite low.
+
+    Given these items, it is understandable that the group will need to accommodate these variations in the original plan, and work through any roadblocks that present themselves in a way that will not drastically impede the long-term outlook of the project as a whole.
+    %\printbibliography
+\end{document}

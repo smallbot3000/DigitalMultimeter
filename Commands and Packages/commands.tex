@@ -1,0 +1,8 @@
+\makeatletter
+\newcommand{\doctitle}[1]{\gdef\@doctitle@text{#1}}
+\newcommand{\shorttitle}[1]{\gdef\@shorttitle@text{#1}}
+\gdef\@doctitle@text{Untitled}    % defaults so nothing is undefined
+\gdef\@shorttitle@text{Untitled}
+\newcommand{\thedoctitle}{\@doctitle@text}
+\newcommand{\theshorttitle}{\@shorttitle@text}
+\makeatother
