@@ -22,41 +22,45 @@
     both hardware and software.
 
     \section{Literature Review}\label{sec:lit_rev}
-    \autoref{tab:ac_com_dmms} showes the voltage capabilities of common DMMs, including their full scale, accuracy,
+    \autoref{tab:ac_com_dmms} shows the voltage capabilities of common DMMs, including their full scale, accuracy,
     resolution, and frequency range.~\parencite[24]{lecklider2012handheld}
-    \begin{sidewaystable}
-        \centering
-        \caption{Voltage Capabilities of Common DMMs}
-        \label{tab:ac_com_dmms}
-        \begin{tabular}{cc|ccc|cccc}\hline
-            & & \multicolumn{3}{c|}{DC}& \multicolumn{4}{c}{AC}\\\cline{3-9}
-            Make& Model& Full Scale& Accuracy& Resolution& Full Scale& Accuracy& Resolution& Frequency\\
-            & & $V$& $\pm\%+\text{Counts}$& $\mu V$& $(V\text{ to }V)$& $\pm\%+\text{Counts}$& $\mu V$& $Hz$\\\hline
-            AMEC& 5233& $0.06\to1k$& $1\%+12$& $10$& $0.06\to1k$& $1\%+12$& $10$& $10\to3k$\\
-            AMEC& MTX3283-BCOMCM& $0.1\to1k$& $0.08\%+8$& $1$& $0.1\to1k$& $0.3\%+40$& $1.0$& $45\to200k$\\\hline
-            Agilent Technologies& U1273AX& $0.03\to1k$& $0.05\%+2$& $1$& $0.03\to1k$& $0.6\to20$& $1$& $45\to65$\\
-            Agilent Technologies& U1233A& $0.6\to600$& $0.5\%+2$& $100$& $0.6\to600$& $1\%+3$& $100$& $45\to500$\\
-            Agilent Technologies& U1253B& $0.05\to1k$& $0.025\%+5$& $1$& $0.05\to1K$& $0.4\%+25$& $1$& $45\to1k$\\\hline
-            Amprobe& HD160C& $1\to1.5k$& $0.1\%+5$& $100$& $1\to1K$& $1.2\%+10$& $100$& $45\to2k$\\
-            Amprobe& 34SXR-A& $1\to1k$& $0.25\%+5$& $100$& $1\to750$& $1.2\%+10$& $100$& $45\to2k$\\
-            Amprobe& 38SXR-A& $0.4\to1k$& $0.5\%+1$& $100$& $0.4\to750$& $1.2\%+8$& $100$& $45\to2k$\\\hline
-            B \& K Precision& 2712& $0.4\to1k$& $0.1\%+5$& $10$& $45\to1K$& $1.2\%+20$& $10$& $45\to1k$\\
-            B \& K Precision& 2709B& $0.66\to1k$& $0.5\%+2$& $100$& $0.66\to750$& $1.5\%+8$& $100$& $50\to500$\\
-            B \& K Precision& 2708B& $0.34\to1k$& $0.1\%+2$& $100$& $3.4\to750$& $1.5\%+8$& $1k$& $50\to1k$\\\hline
-            Dranetz-BMI& DronTectl PMIT& $3\to300$& $0.1\%+5$& $10$& $3\to600$& $0.2\%+10$& $100$& $20\to1k$\\
-            Dranetz-BMI& DronTectl ISO& $0.3\to1k$& $0.15\%+2$& $100$& $0.3\to1K$& $1\%+3$& $100$& $15\to10k$\\
-            Dranetz-BMI& DronTectl Outdoor& $0.1\to1k$& $0.5\%+3$& $10$& $0.1\to1K$& $0.5\%+3$& $10$& $15\to10k$\\\hline
-            Extech& EX540& $0.4\to1k$& $0.06\%+2$& $10$& $0.4\to1K$& $0.2\%+10$& $100$& $20\to1k$\\
-            Extech& MM57QA& $0.5\to1k$& $0.02\%+2$& $1$& $0.5\to1K$& $1\%+3$& $100$& $15\to10k$\\
-            Extech& MG300& $0.4\to1k$& $0.06\%+4$& $10$& $0.4\to1K$& $0.5\%+3$& $10$& $15\to10k$\\\hline
-            Fluke& CNX 3000& $0.6\to1k$& $0.09\%+2$& $100$& $0.6\to1K$& $1\%+3$& $100$& $45\to1k$\\
-            Fluke& 289& $0.05\to1k$& $0.02\%+2$& $1$& $0.05\to1K$& $0.35\%+25$& $1$& $20\to100k$\\
-            Fluke& 28 II& $0.6\to1k$& $0.09\%+1$& $100$& $0.6\to1K$& $0.7\%+2$& $100$& $45\to20k$\\\hline
-            Yokogawa USA& TY520& $0.6\to1k$& $0.09\%+2$& $100$& $0.6\to1K$& $0.5\%+5$& $100$& $40\to1k$\\
-            Yokogawa USA& TY720& $0.05\to1k$& $0.02\%+2$& $1$& $0.05\to1K$& $0.4\%+30$& $1$& $10\to100k$\\
-            Yokogawa USA& CA450 Process DMM& $0.6\to1k$& $0.09\%+2$& $100$& $0.6\to1K$& $0.5\%+5$& $100$& $45\to500$\\\hline
-        \end{tabular}
-    \end{sidewaystable}
+    \input{Tables/std_dmms_voltage}
+    \input{Tables/std_dmms_gen_info}
+
+    Of the DMMs discussed by~\citeauthor{lecklider2012handheld} and reflected in~\autoref{tab:gen_com_dmms}, the
+    Extech MM57QA was the most popular, with $500,000$ units sold at a cost\footnote{The costs reported in~
+    \autoref{tab:gen_com_dmms} reflect those listed in the source~\parencite[25]{lecklider2012handheld}.
+    These costs are from 2012, and a $45.90\%$ increase is needed to calculate 2026 prices.}
+    of $\$329.99$, with the average selling $50,373.91$ units at a rate of $\$437.98$.
+
+    The meters discussed span an understandably wide range in both price and features.
+    Nearly all of them offer true-rms measurement, continuity and diode testing, and safety ratings of CAT III $1,000$ V or CAT IV $600$ V,
+    usually with CE and often UL, CSA, or IEC 61010-1 certification.
+    At the budget end, the meters offer little beyond practical conveniences such as an LCD backlight, auto power
+    off, a magnetic hanging strap, AC/DC measurement, inductance, dBm, and duty cycle.
+    Others in the general price range also add a bar-graph display and non-contact voltage detection, and a flashlight.
+
+    The mid-range meters mostly distinguish themselves through ruggedness, safety design, and connectivity.
+    Some are IP67 rated, and withstand $8kV$ spikes.
+    Additionally, some are IP67 waterproof with wireless PC connectivity and $9,999$ record storage.
+    This price area also have terminal shutters that block incorrect lead connections, and units add dB math and
+    duty cycle.
+
+    At the top end are the specialized and data-focused instruments.
+    These can include Bluetooth, a graphical display, crest factor, and pulse counting, graphing, a real-time
+    clock, an AC filter, and a 1/4 VGA display Others are able to read wirelessly fro  up to three remote modules at
+    once.
+
+    Given the popularity of the Extech MM57QA, we will focus on its construction, features, and components via it's
+    user manual.
+
+    \subsection{Components}
+    The three main visual component groups are~\parencite[4]{extech_mm57qa}:
+    \begin{enumerate}
+        \item A $5\frac{4}{5}$ digits $500k$ counts LCD display.
+        \item Function buttons
+        \item $3$ Input Jacks
+    \end{enumerate}
     \section{Hardware Review}\label{sec:hard_rev}
     \section{Software Review}\label{sec:soft_rev}
     \section{Conclusion}\label{sec:conc}
