@@ -1,0 +1,60 @@
+\begin{figure}
+    \centering
+    \caption{Digital Multimeter Gantt Chart}
+    \label{fig:gantt_chart}
+    \begin{center}
+        \resizebox{\textwidth}{!}{%
+            \begin{ganttchart}[
+                hgrid,
+                vgrid={*{3}{dotted},*{1}{draw=black}}, % solid line at each month boundary
+                x unit=0.42cm,
+                y unit title=0.6cm,
+                y unit chart=0.6cm,
+                title height=1,
+                title label font=\footnotesize\bfseries,
+                bar label font=\footnotesize,
+                bar height=0.8,
+                bar/.append style={fill=ganttblue, draw=ganttblue!70!black},
+                bar label node/.append style={text width=5.2cm, align=left}
+            ]{1}{32}
+
+                % Semester row
+                \gantttitle{Semester 1 (Fall 2026)}{16}
+                \gantttitle{Semester 2 (Spring 2027)}{16} \\
+                % Month row
+                \gantttitle{September}{4}
+                \gantttitle{October}{4}
+                \gantttitle{November}{4}
+                \gantttitle{December}{4}
+                \gantttitle{January}{4}
+                \gantttitle{February}{4}
+                \gantttitle{March}{4}
+                \gantttitle{April}{4} \\
+
+                % Tasks (blue)
+                \ganttbar{Project Scope}{2}{4} \\
+                \ganttbar{Work Breakdown Structure}{4}{6} \\
+                \ganttbar{GANTT Chart}{4}{6} \\
+                \ganttbar{Cost Estimation Summary}{5}{9} \\
+                \ganttbar{Research and Literature Review}{3}{10} \\
+                \ganttbar{Reverse Engineering}{7}{10} \\
+                \ganttbar{Circuit Building}{10}{13} \\
+
+                % Software (red)
+                \ganttbar[bar/.append style={fill=ganttred, draw=ganttred!70!black}]{Create Needed Software}{11}{14} \\
+                \ganttbar[bar/.append style={fill=ganttred, draw=ganttred!70!black}]{Debug Software as Needed}{11}{14} \\
+
+                % Testing / display (yellow)
+                \ganttbar[bar/.append style={fill=ganttyellow, draw=ganttyellow!70!black}]{Testing with Microcontroller}{14}{17} \\
+                \ganttbar[bar/.append style={fill=ganttyellow, draw=ganttyellow!70!black}]{Develop Display}{17}{19} \\
+
+                % Remaining tasks (blue)
+                \ganttbar{Develop PCB}{19}{22} \\
+                \ganttbar{Finalize Design}{22}{26} \\
+                \ganttbar{Acceptance Criteria Form}{26}{29} \\
+                \ganttbar{Stakeholder/Class Report}{28}{32} \\
+                \ganttbar{Project Wrap-Up}{28}{32}
+            \end{ganttchart}
+        }
+    \end{center}
+\end{figure}

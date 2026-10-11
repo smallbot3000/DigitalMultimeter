@@ -1,0 +1,48 @@
+\begin{sidewaysfigure}
+    \centering
+    \caption{Work Breakdown Structure}
+    \label{fig:wbs}
+    \begin{tikzpicture}[
+        box/.style={rectangle, draw, align=center, minimum height=8mm, minimum width=30mm},
+        kid/.style={box, anchor=north west},
+        node distance=8mm and 10mm
+    ]
+        % Level 1
+        \node[box] (head) {Digital Multimeter};
+
+        % Level 2
+        \node[box, below=12mm of head] (a) {Software};
+        \node[box, left=of a]  (b) {Sensors};
+        \node[box, left=of b]  (c) {Multicontroller};
+        \node[box, right=of a] (d) {Display};
+        \node[box, right=of d] (e) {Physical Interface};
+
+        % Level 3: first child is indented 5mm and sits 4mm below the parent,
+        % each next child sits 4mm below the previous one
+        \node[kid] (a1) at ($(a.south west)+(5mm,-4mm)$) {Programming};
+        \node[kid] (a2) at ($(a1.south west)+(0,-4mm)$)  {Debug};
+        \node[kid] (a3) at ($(a2.south west)+(0,-4mm)$)  {Calibration};
+
+        \node[kid] (b1) at ($(b.south west)+(5mm,-4mm)$) {Develop Budget};
+        \node[kid] (b2) at ($(b1.south west)+(0,-4mm)$)  {Calibration};
+
+        \node[kid] (c1) at ($(c.south west)+(5mm,-4mm)$) {Develop Budget};
+        \node[kid] (c2) at ($(c1.south west)+(0,-4mm)$)  {Calibration};
+
+        \node[kid] (d1) at ($(d.south west)+(5mm,-4mm)$) {Develop Budget};
+        \node[kid] (d2) at ($(d1.south west)+(0,-4mm)$)  {Receive Data};
+        \node[kid] (d3) at ($(d2.south west)+(0,-4mm)$)  {Calibration};
+
+        \node[kid] (e1) at ($(e.south west)+(5mm,-4mm)$) {Develop Budget};
+        \node[kid] (e2) at ($(e1.south west)+(0,-4mm)$)  {Calibration};
+
+        % Level 1 -> Level 2
+        \foreach \child in {a,b,c,d,e}
+        \draw (head.south) -- ++(0,-6mm) -| (\child.north);
+
+        % Level 2 -> Level 3: trunk down the parent's left side, branch into each child
+        \foreach \p/\kids in {a/{a1,a2,a3}, b/{b1,b2}, c/{c1,c2}, d/{d1,d2, d3}, e/{e1,e2}}
+        \foreach \k in \kids
+        \draw ([xshift=2.5mm]\p.south west) |- (\k.west);
+    \end{tikzpicture}
+\end{sidewaysfigure}
